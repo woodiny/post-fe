@@ -19,7 +19,7 @@ jobs:
 
       - name: Deploy to S3
         run: |
-          aws s3 sync . s3://post.woodiny.com/ --delete --exclude ".github/*"
+          aws s3 sync . s3://post.woodiny.com/ --delete --exclude ".git/*" --exclude ".github/*"
 
       - name: Invalidate CloudFront Cache
         run: |
