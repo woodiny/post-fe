@@ -10,7 +10,8 @@ export default function Header() {
   const pathParts = location.pathname.split('/').filter(Boolean);
   const isUserPage = pathParts.length === 1;
   const isPostPage = pathParts.length === 2;
-  const userId = (isUserPage || isPostPage) ? pathParts[0] : null;
+  const encodedUserId = (isUserPage || isPostPage) ? pathParts[0] : null;
+  const userId = encodedUserId ? decodeURIComponent(encodedUserId) : null;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,11 +35,11 @@ export default function Header() {
       <div className="max-w-screen-xl mx-auto px-4 h-full flex items-center justify-between">
         <div>
           {userId ? (
-            <Link to={`/${userId}`} className="text-2xl font-semibold hover:text-gray-600 transition-colors">
+            <Link to={`/${encodedUserId}`} className="text-3xl font-semibold hover:text-gray-600 transition-colors">
               {userId}
             </Link>
           ) : (
-            <Link to="/" className="text-2xl font-semibold hover:text-gray-600 transition-colors">
+            <Link to="/" className="text-3xl font-semibold hover:text-gray-600 transition-colors">
               Woodiny Post
             </Link>
           )}
