@@ -1,9 +1,9 @@
 @import "tailwindcss";
 @import "./fonts.css";
 
-/* Base font settings */
 body {
-  font-family: var(--font-korean-regular);
+  font-family: 'nanum-gothic-coding', monospace;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
