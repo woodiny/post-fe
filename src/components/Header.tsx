@@ -35,11 +35,11 @@ export default function Header() {
       <div className="max-w-screen-xl mx-auto px-4 h-full flex items-center justify-between">
         <div>
           {userId ? (
-            <Link to={`/${encodedUserId}`} className="text-3xl font-semibold hover:text-gray-600 transition-colors">
+            <Link to={`/${encodedUserId}`} className="text-3xl font-semibold italic hover:text-gray-600 transition-colors">
               {userId}
             </Link>
           ) : (
-            <Link to="/" className="text-3xl font-semibold hover:text-gray-600 transition-colors">
+            <Link to="/" className="text-3xl font-semibold italic hover:text-gray-600 transition-colors">
               Woodiny Post
             </Link>
           )}
