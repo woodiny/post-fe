@@ -40,7 +40,7 @@ export default function UserProfile({ user }: UserProfileProps) {
               className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
             >
               <FaGithub className="w-5 h-5" />
-              <span className="text-sm">@{getSocialId(user.socialLinks.github)}</span>
+              <span className="text-sm">{getSocialId(user.socialLinks.github)}</span>
             </a>
           )}
           {user.socialLinks.twitter && (
@@ -51,7 +51,7 @@ export default function UserProfile({ user }: UserProfileProps) {
               className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
             >
               <FaTwitter className="w-5 h-5" />
-              <span className="text-sm">@{getSocialId(user.socialLinks.twitter)}</span>
+              <span className="text-sm">{getSocialId(user.socialLinks.twitter)}</span>
             </a>
           )}
           {user.socialLinks.linkedin && (
