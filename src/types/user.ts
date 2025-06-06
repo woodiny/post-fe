@@ -1,4 +1,4 @@
-export interface User {
+export interface UserType {
   id: string;
   name: string;
   imageUrl: string;
@@ -10,12 +10,3 @@ export interface User {
     website?: string;
   };
 }
-
-export interface Post {
-  id: string;
-  title: string;
-  excerpt: string;
-  createdAt: string;
-  readTime: number;
-  likes: number;
-} 
