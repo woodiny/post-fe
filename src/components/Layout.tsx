@@ -10,7 +10,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className="bg-white">
       <Header />
-      <main className="pt-16 px-4 max-w-screen-xl mx-auto min-h-screen">
+      <main className="pt-16 px-4 max-w-screen-xl mx-auto min-h-screen break-words">
         {children}
       </main>
       <Footer />
