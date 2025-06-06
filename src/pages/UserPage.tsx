@@ -1,14 +1,17 @@
-import { useParams } from 'react-router-dom';
-import Layout from '../components/Layout';
-import UserProfile from '../components/UserProfile';
-import PostList from '../components/PostList';
-import { useEffect, useState } from 'react';
-import { User, Post } from '../types/user';
+import { useParams } from "react-router-dom";
+import Layout from "../components/Layout";
+import UserProfile from "../components/UserProfile";
+import PostList from "../components/PostList";
+import { useEffect, useState } from "react";
+import { UserType } from "../types/user";
+import { PostType } from "../types/post";
+import { mockPost } from "../mocks/post";
+import { mockUser } from "../mocks/user";
 
 export default function UserPage() {
   const { userId } = useParams();
-  const [user, setUser] = useState<User | null>(null);
-  const [posts, setPosts] = useState<Post[]>([]);
+  const [user, setUser] = useState<UserType | null>(null);
+  const [posts, setPosts] = useState<PostType[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -16,41 +19,10 @@ export default function UserPage() {
     const fetchUserData = async () => {
       try {
         // Simulated API call
-        const mockUser: User = {
-          id: userId || '',
-          name: 'Woodiny',
-          imageUrl: 'https://avatars.githubusercontent.com/u/115877028?v=4',
-          bio: 'Software engineer passionate about web development and open source, a passionate individual with a diverse background and a love for learning, creating, and connecting with others.',
-          socialLinks: {
-            github: 'https://github.com/woodiny',
-            twitter: 'https://twitter.com/woodiny',
-            linkedin: 'https://linkedin.com/in/woodiny',
-          },
-        };
-
-        const mockPosts: Post[] = [
-          {
-            id: '1',
-            title: 'Getting Started with React',
-            excerpt: 'Learn the basics of React and how to build your first application...',
-            createdAt: '2024-03-15T10:00:00Z',
-            readTime: 5,
-            likes: 42,
-          },
-          {
-            id: '2',
-            title: 'Advanced TypeScript Patterns',
-            excerpt: 'Explore advanced TypeScript patterns and best practices for better type safety...',
-            createdAt: '2024-03-10T15:30:00Z',
-            readTime: 8,
-            likes: 28,
-          },
-        ];
-
         setUser(mockUser);
-        setPosts(mockPosts);
+        setPosts([mockPost, mockPost]);
       } catch (error) {
-        console.error('Error fetching user data:', error);
+        console.error("Error fetching user data:", error);
       } finally {
         setIsLoading(false);
       }
@@ -86,7 +58,7 @@ export default function UserPage() {
       <div className="py-8">
         <UserProfile user={user} />
         <div className="mt-12">
-          <PostList posts={posts} userId={userId || ''} />
+          <PostList posts={posts} userId={userId || ""} />
         </div>
       </div>
     </Layout>

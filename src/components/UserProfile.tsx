@@ -1,8 +1,8 @@
-import { User } from '../types/user';
+import { UserType } from '../types/user';
 import { FaGithub, FaTwitter, FaLinkedin, FaGlobe } from 'react-icons/fa';
 
 interface UserProfileProps {
-  user: User;
+  user: UserType;
 }
 
 export default function UserProfile({ user }: UserProfileProps) {
