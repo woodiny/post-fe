@@ -1,5 +1,19 @@
 @import "tailwindcss";
-@import "./fonts.css";
+@plugin "@tailwindcss/typography";
+
+@font-face {
+  font-family: 'Nanum Gothic Coding';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://fonts.gstatic.com/s/nanumgothiccoding/v22/PG6kz8zJsGqzqLWz_E5bmg69zGdi9nE8zCk.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Nanum Gothic Coding';
+  font-style: normal;
+  font-weight: 700;
+  src: url('https://fonts.gstatic.com/s/nanumgothiccoding/v22/PG6kz8zJsGqzqLWz_E5bmg69zGdi9nE8zCk.woff2') format('woff2');
+}
 
 body {
   font-family: 'nanum-gothic-coding', monospace;
